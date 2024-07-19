@@ -44,7 +44,7 @@ const User = () => {
       {/*Image Slider */}
       
       <View>
-        <ImageSlider/>
+        {/* <ImageSlider/> */}
       </View>
     </SafeAreaView>
   );

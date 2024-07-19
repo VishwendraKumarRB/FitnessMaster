@@ -84,11 +84,5 @@ const HomeScreen = ({navigation}) => {
     </View>
   );
 };
-const Page = () =>{
-    return(
-        <View style={{ flex: 1, backgroundColor: 'red'}}>
-            <Text>page</Text>
-        </View>
-    )
-}
+
 
