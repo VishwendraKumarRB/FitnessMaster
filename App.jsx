@@ -4,9 +4,7 @@ import Home from './app/Home';
 
 function App() {
   return (
-    <View>
       <Home />
-    </View>
   );
 }
 

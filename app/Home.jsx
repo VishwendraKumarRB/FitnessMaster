@@ -19,15 +19,13 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 const Stack = createNativeStackNavigator();
 const Home = () => {
-   
   return (
     <NavigationContainer>
       <Stack.Navigator
-         initialRouteName='Home'
+        initialRouteName="Home"
         screenOptions={{
           headerShown: false,
-        }}
-        >
+        }}>
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="User" component={User} />
       </Stack.Navigator>
@@ -37,9 +35,7 @@ const Home = () => {
 
 export default Home;
 
-
 const HomeScreen = ({navigation}) => {
-
   return (
     <View className="flex-1 flex justify-end ">
       <StatusBar style="dark-content" hidden={true} />
@@ -84,5 +80,3 @@ const HomeScreen = ({navigation}) => {
     </View>
   );
 };
-
-
