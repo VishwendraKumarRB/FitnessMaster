@@ -7,7 +7,7 @@ import Carousel from 'react-native-reanimated-carousel';
 const ImageSlider = () => {
   const width = Dimensions.get('window').width;
   return (
-    <View style={{flex: 1}}>
+    <View >
       <Carousel
         loop={true}
         width={width}
