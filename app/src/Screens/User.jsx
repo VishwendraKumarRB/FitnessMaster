@@ -6,10 +6,18 @@ import {
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import ImageSlider from './src/components/ImageSlider';
-const User = () => {
+
+import {ImageIndex} from '../../../assets/images/';
+import ImageSlider from '../components/ImageSlider';
+import BodyParts from '../components/BodyParts';
+const User = ({ navigation }) => {
+  // return(
+  //     <View>
+  //         <Text>UserScreen</Text>
+  //     </View>
+  // )
   return (
-    <SafeAreaView className="flex-1 bg-white flex space-y-5" edges={['top']}>
+    <SafeAreaView className="flex-1 bg-white flex space-y-5">
       <StatusBar style="dark" />
       {/* Avatar */}
       <View className="flex-row justify-between items-center mx-5">
@@ -27,29 +35,32 @@ const User = () => {
         </View>
         <View className="flex justify-center items-center space-y-2">
           <Image
-            source={require('../assets/images/my.jpg')}
+            source={ImageIndex.my}
             style={{height: 60, width: 60, borderRadius: 30}}
           />
-          <View className="bg-neutral-200 rounded-full flex justify-center items-center "
-          style={{height:50,width:50,borderRadius:25,borderWidth:2,borderColor:"gray"}}>
-            <Icon
-              name="notifications"
-              color="#ff0000"
-              size={hp(3)}
-            />
+          <View
+            className="bg-neutral-200 rounded-full flex justify-center items-center "
+            style={{
+              height: 50,
+              width: 50,
+              borderRadius: 25,
+              borderWidth: 2,
+              borderColor: 'gray',
+            }}>
+            <Icon name="notifications" color="#ff0000" size={hp(3)} />
           </View>
         </View>
       </View>
 
       {/*Image Slider */}
-      
-      <View>
-        <ImageSlider/>
-      </View>
+
+      <ImageSlider />
+
+      {/* Body Parts */}
+
+      <BodyParts />
     </SafeAreaView>
   );
 };
 
 export default User;
-
-const styles = StyleSheet.create({});

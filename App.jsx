@@ -1,10 +1,9 @@
 import React, {ReactElement} from 'react';
 import {Text, View} from 'react-native';
-import Home from './app/Home';
-
+import MainRoute from './app/Route';
 function App() {
   return (
-      <Home />
+    <MainRoute/>
   );
 }
 

@@ -7,7 +7,7 @@ import Carousel from 'react-native-reanimated-carousel';
 const ImageSlider = () => {
   const width = Dimensions.get('window').width;
   return (
-    <View >
+    <View style={{ height: width/2, marginTop: 20 }} >
       <Carousel
         loop={true}
         width={width}
@@ -16,7 +16,8 @@ const ImageSlider = () => {
         data={sliderImages}
         scrollAnimationDuration={1000}
         renderItem={({item, index}) => (
-            <Image source={item} style={{ width: width, height: width/2 }} />
+            <Image source={item} style={{ width: width, height: width/2 }} />  
+            
         )}
       />
     </View>
