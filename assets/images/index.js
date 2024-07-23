@@ -18,4 +18,6 @@ export const ImageIndex = {
   upperLegs: require('../images/upperLegs.png'),
   waist: require('../images/waist.png'),
   welcome: require('../images/welcome.png'),
+  goBackImage: require('../images/goBackImg.png'),
+  notification: require('../images/notificationIcon.png'),
 };

@@ -1,23 +1,22 @@
-import {StatusBar, StyleSheet, Text, View, Image} from 'react-native';
+import {StatusBar, StyleSheet, Text, View, Image,SafeAreaView,TouchableOpacity} from 'react-native';
 import React from 'react';
-import {SafeAreaView} from 'react-native-safe-area-context';
+// import {SafeAreaView} from 'react-native-safe-area-context';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
-import Icon from 'react-native-vector-icons/MaterialIcons';
-
+// import Icon from 'react-native-vector-icons/MaterialIcons';
 import {ImageIndex} from '../../../assets/images/';
 import ImageSlider from '../components/ImageSlider';
 import BodyParts from '../components/BodyParts';
-const User = ({ navigation }) => {
+const User = () => {
   // return(
   //     <View>
   //         <Text>UserScreen</Text>
   //     </View>
   // )
   return (
-    <SafeAreaView className="flex-1 bg-white flex space-y-5">
+    <SafeAreaView className="flex-1 bg-white flex space-y-3">
       <StatusBar style="dark" />
       {/* Avatar */}
       <View className="flex-row justify-between items-center mx-5">
@@ -47,7 +46,13 @@ const User = ({ navigation }) => {
               borderWidth: 2,
               borderColor: 'gray',
             }}>
-            <Icon name="notifications" color="#ff0000" size={hp(3)} />
+            <TouchableOpacity className="color-rose-500 mx-4 absolute rounded-full">
+            <Image
+            source={ImageIndex.notification}
+            style={{height: 40, width: 40, borderRadius: 20,}}
+          />
+            </TouchableOpacity>
+           
           </View>
         </View>
       </View>
@@ -57,8 +62,10 @@ const User = ({ navigation }) => {
       <ImageSlider />
 
       {/* Body Parts */}
+<View style={{flex:1}}>
+<BodyParts />
 
-      <BodyParts />
+</View>
     </SafeAreaView>
   );
 };

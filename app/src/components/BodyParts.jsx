@@ -6,23 +6,25 @@ import {
 } from 'react-native-responsive-screen';
 import {bodyParts} from '../constants/index';
 import LinearGradient from 'react-native-linear-gradient';
-import { useNavigation } from '@react-navigation/native'
+import {useNavigation} from '@react-navigation/native';
 
 export default function BodyParts() {
-    const navigation = useNavigation();
+  const navigation = useNavigation();
 
-_onButtonPress = () => {
-    navigation.navigate('Exercises');
-}
+  _onButtonPress = (item) => {
+    
+    return navigation.navigate('Exercises',{
+      item:item
+    })
+  };
   return (
-    <View className="mx-4" style={{marginVertical: 10}}>
+    <View className="mx-4">
       <Text
         style={{fontSize: hp(3)}}
         className="font-semibold text-neutral-700">
         Exercises
       </Text>
       <FlatList
-      style={{marginBottom:100}}
         data={bodyParts}
         numColumns={2}
         keyExtractor={item => item.name}
@@ -30,7 +32,11 @@ _onButtonPress = () => {
         contentContainerStyle={{paddingBottom: 50, paddingTop: 20}}
         columnWrapperStyle={{justifyContent: 'space-between'}}
         renderItem={({item, index}) => (
-           <BodyPartCard index={index} item={item} onButtonPress={_onButtonPress} />
+          <BodyPartCard
+            index={index}
+            item={item}
+            onButtonPress={_onButtonPress}
+          />
         )}
       />
     </View>
@@ -40,7 +46,9 @@ _onButtonPress = () => {
 const BodyPartCard = ({item, index, onButtonPress}) => {
   return (
     <TouchableOpacity
-    onPress={onButtonPress}
+      onPress={() => {
+        return onButtonPress(item);
+      }}
       style={{width: wp(44), height: wp(52)}}
       className="flex justify-end p-4 mb-4">
       <Image
