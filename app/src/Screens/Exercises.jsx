@@ -37,7 +37,7 @@ const Exercises = ({navigation, route}) => {
         className="rounded-b-[40px]"
       />
       <TouchableOpacity
-        onPress={() => navigation.navigate('User')}
+        onPress={() => navigation.goBack()}
         className="bg-rose-500 m-4 absolute rounded-full">
         <Image
           source={ImageIndex.goBackImage}
