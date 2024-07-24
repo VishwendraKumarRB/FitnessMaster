@@ -1,4 +1,4 @@
-export const ApiKey="1a98c82d84msheec5660476c1551p17f656jsnfbbce3eeb9fd";
+export const ApiKey = '1a98c82d84msheec5660476c1551p17f656jsnfbbce3eeb9fd';
 
 import {ImageIndex} from '../../../assets/images';
 
@@ -51,5 +51,3 @@ export const bodyParts = [
     image: ImageIndex.waist,
   },
 ];
-
-

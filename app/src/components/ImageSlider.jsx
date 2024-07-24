@@ -20,14 +20,20 @@ const ImageSlider = () => {
         data={sliderImages}
         scrollAnimationDuration={1000}
         renderItem={({item, index}) => (
-        
-            <Image source={item} style={{width:wp(90), height: width / 2,borderRadius:30,marginLeft:20,marginRight:20}} />
-       
+          <Image
+            source={item}
+            style={{
+              width: wp(90),
+              height: width / 2,
+              borderRadius: 30,
+              marginLeft: 20,
+              marginRight: 20,
+            }}
+          />
         )}
       />
     </View>
   );
 };
-
 
 export default ImageSlider;

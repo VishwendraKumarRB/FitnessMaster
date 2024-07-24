@@ -7,16 +7,15 @@ import {
 import {bodyParts} from '../constants/index';
 import LinearGradient from 'react-native-linear-gradient';
 import {useNavigation} from '@react-navigation/native';
-import Animated, { FadeInDown } from 'react-native-reanimated';
+import Animated, {FadeInDown} from 'react-native-reanimated';
 
 export default function BodyParts() {
   const navigation = useNavigation();
 
-  _onButtonPress = (item) => {
-    
-    return navigation.navigate('Exercises',{
-      item:item
-    })
+  _onButtonPress = item => {
+    return navigation.navigate('Exercises', {
+      item: item,
+    });
   };
   return (
     <View className="mx-4">
@@ -46,32 +45,36 @@ export default function BodyParts() {
 
 const BodyPartCard = ({item, index, onButtonPress}) => {
   return (
-    <Animated.View entering={FadeInDown.duration(400).delay(index*200).springify().damping(3)}>
-    <TouchableOpacity
-      onPress={() => {
-        return onButtonPress(item);
-      }}
-      style={{width: wp(44), height: wp(52)}}
-      className="flex justify-end p-4 mb-4">
-      <Image
-        source={item.image}
-        resizeMode="cover"
+    <Animated.View
+      entering={FadeInDown.duration(400)
+        .delay(index * 200)
+        .springify()
+        .damping(3)}>
+      <TouchableOpacity
+        onPress={() => {
+          return onButtonPress(item);
+        }}
         style={{width: wp(44), height: wp(52)}}
-        className="rounded-[35px] absolute"
-      />
-      <LinearGradient
-        colors={['transparent', 'rgba(0,0,0,0.9)']}
-        style={{width: wp(44), height: hp(15)}}
-        start={{x: 0.5, y: 0}}
-        end={{x: 0.5, y: 1}}
-        className="absolute bottom-0 rounded-b-[35px]"
-      />
-      <Text
-        style={{fontSize: hp(2.3)}}
-        className="text-white font-semibold text-center tracking-wide">
-        {item?.name}
-      </Text>
-    </TouchableOpacity>
+        className="flex justify-end p-4 mb-4">
+        <Image
+          source={item.image}
+          resizeMode="cover"
+          style={{width: wp(44), height: wp(52)}}
+          className="rounded-[35px] absolute"
+        />
+        <LinearGradient
+          colors={['transparent', 'rgba(0,0,0,0.9)']}
+          style={{width: wp(44), height: hp(15)}}
+          start={{x: 0.5, y: 0}}
+          end={{x: 0.5, y: 1}}
+          className="absolute bottom-0 rounded-b-[35px]"
+        />
+        <Text
+          style={{fontSize: hp(2.3)}}
+          className="text-white font-semibold text-center tracking-wide">
+          {item?.name}
+        </Text>
+      </TouchableOpacity>
     </Animated.View>
   );
 };

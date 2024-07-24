@@ -16,13 +16,13 @@ const MainRoute = () => {
         }}>
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="User" component={User} />
-        <Stack.Screen name="Exercises" component={Exercises}/>
-        <Stack.Screen name="ExerciseDetailsScreen" component={ExerciseDetailsScreen}/>
-
+        <Stack.Screen name="Exercises" component={Exercises} />
+        <Stack.Screen
+          name="ExerciseDetailsScreen"
+          component={ExerciseDetailsScreen}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
 };
 export default MainRoute;
-
-
