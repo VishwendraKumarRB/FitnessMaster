@@ -16,6 +16,7 @@ const ExerciseDetailsScreen = ({navigation, route}) => {
         <Image
           source={{uri: item.gifUrl}}
           contentFit="cover"
+          resizeMode='contain'
           style={{height: wp(100), width: wp(100)}}
           className="rounded-b-[40px]"
         />
