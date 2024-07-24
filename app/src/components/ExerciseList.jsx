@@ -16,7 +16,7 @@ import {useNavigation} from '@react-navigation/native';
 
 const ExerciseList = ({data}) => {
   const navigation = useNavigation();
-  _onExerciseBtnPress = item => {
+  _onExerciseBtnPress = (item) => {
     navigation.navigate('ExerciseDetailsScreen', {
       item: item,
     });

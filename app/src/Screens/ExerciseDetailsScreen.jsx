@@ -13,6 +13,5 @@ const ExerciseDetailsScreen = ({navigation, route}) => {
     </View>
   );
 };
-
 export default ExerciseDetailsScreen;
 

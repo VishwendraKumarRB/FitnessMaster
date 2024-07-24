@@ -7,7 +7,6 @@ import {
   StatusBar,
 } from 'react-native';
 import React, {useEffect, useState} from 'react';
-import { dummyDataExercises} from '../constants';
 import {fetchExercisesByBodyPart} from '../../api';
 import {ImageIndex} from '../../../assets/images';
 import {
