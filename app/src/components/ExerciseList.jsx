@@ -13,6 +13,7 @@ import {
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 import {useNavigation} from '@react-navigation/native';
+import Animated, { FadeInDown } from 'react-native-reanimated';
 
 const ExerciseList = ({data}) => {
   const navigation = useNavigation();
@@ -47,7 +48,7 @@ export default ExerciseList;
 
 const ExerciseCard = ({item, index, onExerciseBtnPress}) => {
   return (
-    <View>
+    <Animated.View  entering={FadeInDown.duration(400).delay(index*200).springify()}>
       <TouchableOpacity
         onPress={() => {
           return onExerciseBtnPress(item);
@@ -67,6 +68,6 @@ const ExerciseCard = ({item, index, onExerciseBtnPress}) => {
           {item?.name?.length > 20 ? item.name.slice(0, 20) + '...' : item.name}
         </Text>
       </TouchableOpacity>
-    </View>
+    </Animated.View>
   );
 };

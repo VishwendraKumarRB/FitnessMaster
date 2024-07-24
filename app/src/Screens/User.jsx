@@ -1,20 +1,21 @@
-import {StatusBar, StyleSheet, Text, View, Image,SafeAreaView,TouchableOpacity} from 'react-native';
+import {
+  StatusBar,
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  SafeAreaView,
+  TouchableOpacity,
+} from 'react-native';
 import React from 'react';
-// import {SafeAreaView} from 'react-native-safe-area-context';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
-// import Icon from 'react-native-vector-icons/MaterialIcons';
 import {ImageIndex} from '../../../assets/images/';
 import ImageSlider from '../components/ImageSlider';
 import BodyParts from '../components/BodyParts';
 const User = () => {
-  // return(
-  //     <View>
-  //         <Text>UserScreen</Text>
-  //     </View>
-  // )
   return (
     <SafeAreaView className="flex-1 bg-white flex space-y-3">
       <StatusBar style="dark" />
@@ -47,12 +48,11 @@ const User = () => {
               borderColor: 'gray',
             }}>
             <TouchableOpacity className="color-rose-500 mx-4 absolute rounded-full">
-            <Image
-            source={ImageIndex.notification}
-            style={{height: 40, width: 40, borderRadius: 20,}}
-          />
+              <Image
+                source={ImageIndex.notification}
+                style={{height: 40, width: 40, borderRadius: 20}}
+              />
             </TouchableOpacity>
-           
           </View>
         </View>
       </View>
@@ -62,10 +62,9 @@ const User = () => {
       <ImageSlider />
 
       {/* Body Parts */}
-<View style={{flex:1}}>
-<BodyParts />
-
-</View>
+      <View style={{flex: 1}}>
+        <BodyParts />
+      </View>
     </SafeAreaView>
   );
 };

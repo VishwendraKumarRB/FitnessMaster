@@ -7,6 +7,7 @@ import {
 import {bodyParts} from '../constants/index';
 import LinearGradient from 'react-native-linear-gradient';
 import {useNavigation} from '@react-navigation/native';
+import Animated, { FadeInDown } from 'react-native-reanimated';
 
 export default function BodyParts() {
   const navigation = useNavigation();
@@ -45,6 +46,7 @@ export default function BodyParts() {
 
 const BodyPartCard = ({item, index, onButtonPress}) => {
   return (
+    <Animated.View entering={FadeInDown.duration(400).delay(index*200).springify().damping(3)}>
     <TouchableOpacity
       onPress={() => {
         return onButtonPress(item);
@@ -70,5 +72,6 @@ const BodyPartCard = ({item, index, onButtonPress}) => {
         {item?.name}
       </Text>
     </TouchableOpacity>
+    </Animated.View>
   );
 };
